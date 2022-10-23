@@ -1,36 +1,34 @@
+
 #include <stdio.h>
 
-void subtract(float a, float b, float c)
+float subtract(float a, float b)
 {
-	printf("%.1f - ", a);
-	printf("%.1f = ", b);
-	printf("%.1f\n", c);
-	return 0;
+	return a - b;
 }
 
 
 int main()
 {
 
-	float a = 3.4;
+	float a =3.4;
 	float b = 6.8;
-	float c = a - b;
-	c = a - b;
-	subtract(a, b, a - b);
+	
+	float c = subtract(a, b);
+	
+	printf("%lg - %lg = %lg", a, b, c);
 	return 0;
 
 }
 
 
 
-
-/*I denna uppgift skall två versioner av samma program genomföras för att demonstrera returnering av värde via stacken
-jämfört med lagring av returvärde på en given adress.
-a) Skriv ett program innehållande en funktion döpt subtract, som returnerar differensen av två flyttal x och y. Deklarera två
+/*I denna uppgift skall tvÃ¥ versioner av samma program genomfÃ¶ras fÃ¶r att demonstrera returnering av vÃ¤rde via stacken
+jÃ¤mfÃ¶rt med lagring av returvÃ¤rde pÃ¥ en given adress.
+a) Skriv ett program innehÃ¥llande en funktion dÃ¶pt subtract, som returnerar differensen av tvÃ¥ flyttal x och y. Deklarera tvÃ¥
 variabler a och b i funktionen main, tilldela flyttal 3.4 respektive 6.8 vid start. Anropa sedan funktionen subtract och lagra
-returvärdet i en variabel döpt c. Skriv ut differensen på formen a - b = c, vilket skall resultera i utskriften ”3.4 - 6.8 = -3.4”.
-b) Modifiera ovanstående program, så att funktionen subtract inte har något returvärde. I stället skall differensen x – y lagras
-på en angiven adress z, som passeras vid funktionsanropet. Se till att differensen efter funktionsanropet lagras på adressen
-till variabeln c i main och genomför sedan utskrift igen.
-c) Av ovanstående versioner, vilken föredrar du? Ser du någon fördel med att passera adressen till ett objekt i stället för en
-kopia, exempelvis för ett större objekt såsom en sträng?*/
+returvÃ¤rdet i en variabel dÃ¶pt c. Skriv ut differensen pÃ¥ formen a - b = c, vilket skall resultera i utskriften â€3.4 - 6.8 = -3.4â€.
+b) Modifiera ovanstÃ¥ende program, sÃ¥ att funktionen subtract inte har nÃ¥got returvÃ¤rde. I stÃ¤llet skall differensen x â€“ y lagras
+pÃ¥ en angiven adress z, som passeras vid funktionsanropet. Se till att differensen efter funktionsanropet lagras pÃ¥ adressen
+till variabeln c i main och genomfÃ¶r sedan utskrift igen.
+c) Av ovanstÃ¥ende versioner, vilken fÃ¶redrar du? Ser du nÃ¥gon fÃ¶rdel med att passera adressen till ett objekt i stÃ¤llet fÃ¶r en
+kopia, exempelvis fÃ¶r ett stÃ¶rre objekt sÃ¥som en strÃ¤ng?*/
