@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /*******************************************************************************
-* electrical_print: Skriver ut spänning, ström och skriver ut resistansen genom att dividera spännignen med strömen.
+* electrical_print: Skriver ut spÃ¤nning, strÃ¶m och skriver ut resistansen genom att dividera spÃ¤nnignen med strÃ¶men.
 *******************************************************************************/
 
  void electrical_print(float V, float mA, float KOhm)
@@ -30,13 +30,13 @@ int main(void)
 
 
 
-/*Skapa ett program där tre flyttalsvariabler voltage, current samt resistance deklareras i funktionen main. Tilldela sedan
-nedanstående värden till variablerna genom att skicka deras respektive adress till funktionen electrical_set:
+/*Skapa ett program dÃ¤r tre flyttalsvariabler voltage, current samt resistance deklareras i funktionen main. Tilldela sedan
+nedanstÃ¥ende vÃ¤rden till variablerna genom att skicka deras respektive adress till funktionen electrical_set:
 voltage = 3.4 V
 current = 6.8 mA
 resistance = voltage / current
-Genomför sedan utskrift av värdena via anrop av en funktion döpt electrical_print. Utskriften skall ske i terminalen och
-skall se ut såsom nedan:
+GenomfÃ¶r sedan utskrift av vÃ¤rdena via anrop av en funktion dÃ¶pt electrical_print. Utskriften skall ske i terminalen och
+skall se ut sÃ¥som nedan:
 -------------------------------------------------------------------------------------------------------
 Voltage: 3.4 V
 Current: 6.8 mA
