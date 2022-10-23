@@ -1,36 +1,61 @@
 #include <stdio.h>
 
-void subtract(float a, float b, float c)
+int compare_low_to_high(const void* a, const void* b)
 {
-	printf("%.1f - ", a);
-	printf("%.1f = ", b);
-	printf("%.1f\n", c);
-	return 0;
+    if (*(double*)a > *(double*)b) return 1;
+    else if (*(double*)a < *(double*)b) return -1;
+    else return 0;
 }
 
+int compare_high_to_low(const void* a, const void* b)
+{
+    if (*(double*)a < *(double*)b) return 1;
+    else if (*(double*)a > *(double*)b) return -1;
+    else return 0;
+}
 
 int main()
 {
+    double data[] = { 7, 0.5, 2, 0.3, 0.1, 0.0, -10, 528.2, 8.0, 7.2, 2.3, 1100, 222 };
+    int n;
 
-	float a = 3.4;
-	float b = 6.8;
-	float c = a - b;
-	c = a - b;
-	subtract(a, b, a - b);
-	return 0;
+    printf("Before sorting the list its: \n");
+    for (n = 0; n < 13; n++)
+    {
+        printf("%.1f ", data[n]);
+    }
 
+    printf("\n\n");
+
+    qsort(data, 13, sizeof(double), compare_low_to_high);
+
+    printf("\nAfter sorting the list low to high its: \n");
+    for (n = 0; n < 13; n++)
+    {
+        printf("%.1f ", data[n]);
+    }
+
+    printf("\n\n");
+
+    qsort(data, 13, sizeof(double), compare_high_to_low);
+
+    printf("\nAfter sorting the list high to low its: \n");
+    for (n = 0; n < 13; n++)
+    {
+        printf("%.1f ", data[n]);
+    }
+    printf("\n\n");
+
+    return(0);
 }
 
-
-
-
-/*I denna uppgift skall två versioner av samma program genomföras för att demonstrera returnering av värde via stacken
-jämfört med lagring av returvärde på en given adress.
-a) Skriv ett program innehållande en funktion döpt subtract, som returnerar differensen av två flyttal x och y. Deklarera två
-variabler a och b i funktionen main, tilldela flyttal 3.4 respektive 6.8 vid start. Anropa sedan funktionen subtract och lagra
-returvärdet i en variabel döpt c. Skriv ut differensen på formen a - b = c, vilket skall resultera i utskriften ”3.4 - 6.8 = -3.4”.
-b) Modifiera ovanstående program, så att funktionen subtract inte har något returvärde. I stället skall differensen x – y lagras
-på en angiven adress z, som passeras vid funktionsanropet. Se till att differensen efter funktionsanropet lagras på adressen
-till variabeln c i main och genomför sedan utskrift igen.
-c) Av ovanstående versioner, vilken föredrar du? Ser du någon fördel med att passera adressen till ett objekt i stället för en
-kopia, exempelvis för ett större objekt såsom en sträng?*/
+/*Du har en statisk array döpt data nedan, innehållande ett flertal flyttal.
+int main(void)
+{
+double data[] = { 7, 0.5, 2, 0.3, 0.1, 0.0, -10, 528.2, 8.0, 7.2, 2.3, 1100, 222 };
+return 0;
+}
+a) Sortera arrayens innehåll i fallande ordning, så att det största talet ligger längst fram och det minsta talet längst bak.
+b) Skriv ut arrayens innehåll i terminalen.
+c) Sortera arrayens innehåll i stigande ordning, så att det minsta talet ligger längst fram och det största talet längst bak.
+d) Skriv återigen ut arrayens innehåll i terminalen.*/
