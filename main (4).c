@@ -49,13 +49,13 @@ int main()
     return(0);
 }
 
-/*Du har en statisk array döpt data nedan, innehållande ett flertal flyttal.
+/*Du har en statisk array dÃ¶pt data nedan, innehÃ¥llande ett flertal flyttal.
 int main(void)
 {
 double data[] = { 7, 0.5, 2, 0.3, 0.1, 0.0, -10, 528.2, 8.0, 7.2, 2.3, 1100, 222 };
 return 0;
 }
-a) Sortera arrayens innehåll i fallande ordning, så att det största talet ligger längst fram och det minsta talet längst bak.
-b) Skriv ut arrayens innehåll i terminalen.
-c) Sortera arrayens innehåll i stigande ordning, så att det minsta talet ligger längst fram och det största talet längst bak.
-d) Skriv återigen ut arrayens innehåll i terminalen.*/
+a) Sortera arrayens innehÃ¥ll i fallande ordning, sÃ¥ att det stÃ¶rsta talet ligger lÃ¤ngst fram och det minsta talet lÃ¤ngst bak.
+b) Skriv ut arrayens innehÃ¥ll i terminalen.
+c) Sortera arrayens innehÃ¥ll i stigande ordning, sÃ¥ att det minsta talet ligger lÃ¤ngst fram och det stÃ¶rsta talet lÃ¤ngst bak.
+d) Skriv Ã¥terigen ut arrayens innehÃ¥ll i terminalen.*/
