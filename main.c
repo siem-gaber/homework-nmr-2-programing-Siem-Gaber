@@ -1,61 +1,44 @@
 #include <stdio.h>
 
-int compare_low_to_high(const void* a, const void* b)
+/*******************************************************************************
+* electrical_print: Skriver ut spänning, ström och skriver ut resistansen genom att dividera spännignen med strömen.
+*******************************************************************************/
+
+ void electrical_print(float V, float mA, float KOhm)
 {
-    if (*(double*)a > *(double*)b) return 1;
-    else if (*(double*)a < *(double*)b) return -1;
-    else return 0;
+	printf("Voltage: %.1f V\n", V );
+	printf("Current: %.1f mA\n", mA);
+	printf("Resistance: %.1f KOhm\n", KOhm);
+	return 0;
 }
 
-int compare_high_to_low(const void* a, const void* b)
-{
-    if (*(double*)a < *(double*)b) return 1;
-    else if (*(double*)a > *(double*)b) return -1;
-    else return 0;
-}
+ /******************************************************************************
+ * main: Tar emot och tillderar vrden till electriva_print funktionen
+ *samt "aktiverar" electrical_print funktionen.
+ *******************************************************************************/
 
-int main()
-{
-    double data[] = { 7, 0.5, 2, 0.3, 0.1, 0.0, -10, 528.2, 8.0, 7.2, 2.3, 1100, 222 };
-    int n;
-
-    printf("Before sorting the list its: \n");
-    for (n = 0; n < 13; n++)
-    {
-        printf("%.1f ", data[n]);
-    }
-
-    printf("\n\n");
-
-    qsort(data, 13, sizeof(double), compare_low_to_high);
-
-    printf("\nAfter sorting the list low to high its: \n");
-    for (n = 0; n < 13; n++)
-    {
-        printf("%.1f ", data[n]);
-    }
-
-    printf("\n\n");
-
-    qsort(data, 13, sizeof(double), compare_high_to_low);
-
-    printf("\nAfter sorting the list high to low its: \n");
-    for (n = 0; n < 13; n++)
-    {
-        printf("%.1f ", data[n]);
-    }
-    printf("\n\n");
-
-    return(0);
-}
-
-/*Du har en statisk array döpt data nedan, innehållande ett flertal flyttal.
 int main(void)
 {
-double data[] = { 7, 0.5, 2, 0.3, 0.1, 0.0, -10, 528.2, 8.0, 7.2, 2.3, 1100, 222 };
-return 0;
+	float V = 3.4;
+	float mA = 6.8;
+	float KOhm = V/mA;
+	KOhm = V / mA;
+	electrical_print(V, mA, V/mA );
+	return 0;
 }
-a) Sortera arrayens innehåll i fallande ordning, så att det största talet ligger längst fram och det minsta talet längst bak.
-b) Skriv ut arrayens innehåll i terminalen.
-c) Sortera arrayens innehåll i stigande ordning, så att det minsta talet ligger längst fram och det största talet längst bak.
-d) Skriv återigen ut arrayens innehåll i terminalen.*/
+
+
+
+
+/*Skapa ett program där tre flyttalsvariabler voltage, current samt resistance deklareras i funktionen main. Tilldela sedan
+nedanstående värden till variablerna genom att skicka deras respektive adress till funktionen electrical_set:
+voltage = 3.4 V
+current = 6.8 mA
+resistance = voltage / current
+Genomför sedan utskrift av värdena via anrop av en funktion döpt electrical_print. Utskriften skall ske i terminalen och
+skall se ut såsom nedan:
+-------------------------------------------------------------------------------------------------------
+Voltage: 3.4 V
+Current: 6.8 mA
+Resistance: 0.5 kOhm
+-------------------------------------------------------------------------------------------------------*/
