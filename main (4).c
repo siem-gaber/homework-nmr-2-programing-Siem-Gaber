@@ -19,12 +19,6 @@ int main()
     double data[] = { 7, 0.5, 2, 0.3, 0.1, 0.0, -10, 528.2, 8.0, 7.2, 2.3, 1100, 222 };
     int n;
 
-    printf("Before sorting the list its: \n");
-    for (n = 0; n < 13; n++)
-    {
-        printf("%.1f ", data[n]);
-    }
-
     printf("\n\n");
 
     qsort(data, 13, sizeof(double), compare_low_to_high);
